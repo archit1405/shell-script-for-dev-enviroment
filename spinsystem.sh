@@ -2,11 +2,9 @@
 
 echo "This script will install these tools for your dev environment"
 
-echo "================= openJDK 1.8 ================="
-echo "================= maven ======================="
+echo "================= openJDK  ================="
 echo "=================  git  ======================="
 echo "================= VScode   ===================="
-echo "================= IntelliJ ===================="
 echo "================= Docker ======================"
 
 
@@ -61,32 +59,6 @@ case "$ANSWER" in
         ;;
     [nN] )
         echo "Skipping installation of git"
-        ;;
-    *)
-    echo "Please enter a valid input: y/Y or n/N"
-    ;;
-esac
-
-echo
-echo
-echo "=============================Installation process for VScode============================="
-
-##Installation process for git
-read -p "continue installation of VScode ? [y/n]  " ANSWER
-
-case "$ANSWER" in
-    [yY] )
-        echo "Installing VScode.............."
-        sudo apt update
-        sudo apt install software-properties-common apt-transport-https wget
-        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-        sudo apt update
-        sudo apt install code
-        echo "Installation of VScode completed........"
-        ;;
-    [nN] )
-        echo "Skipping installation for git"
         ;;
     *)
     echo "Please enter a valid input: y/Y or n/N"
